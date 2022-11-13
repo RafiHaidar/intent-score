@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MatchActivity">
 
     <TextView
@@ -11,21 +12,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Home Team"
+        android:hint="Home Team"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/home_logo"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="20dp"
+        android:src="@mipmap/ic_launcher_round"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_home"
-        app:srcCompat="@mipmap/ic_launcher_round" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_home" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -42,40 +43,71 @@
         android:textSize="80sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home_logo"
-        app:layout_constraintBottom_toTopOf="@id/btn_add_home"/>
+        app:layout_constraintTop_toBottomOf="@+id/home_logo" />
 
     <Button
-        android:id="@+id/btn_add_home"
-        android:layout_width="match_parent"
+        android:id="@+id/btn_add_home_1"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="Add Home Score"
-        android:layout_marginBottom="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="50dp"
+        android:text="+1"
+        app:layout_constraintBottom_toTopOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/score_home" />
 
+    <Button
+        android:id="@+id/btn_add_home_2"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="50dp"
+        android:text="+2"
+        app:layout_constraintBottom_toTopOf="@id/guideline"
+        app:layout_constraintStart_toEndOf="@id/btn_add_home_1"
+        app:layout_constraintTop_toBottomOf="@id/score_home" />
+
+    <Button
+        android:id="@+id/btn_add_home_3"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="50dp"
+        android:text="+3"
+        app:layout_constraintBottom_toBottomOf="@id/guideline"
+        app:layout_constraintStart_toEndOf="@id/btn_add_home_2"
+        app:layout_constraintTop_toBottomOf="@id/score_home" />
+
+    <Button
+        android:id="@+id/btn_add_reset"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="50dp"
+        android:text="Reset"
+        app:layout_constraintBottom_toTopOf="@id/guideline"
+        app:layout_constraintStart_toEndOf="@id/btn_add_home_3"
+        app:layout_constraintTop_toBottomOf="@id/score_home" />
 
     <TextView
         android:id="@+id/txt_away"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
         android:layout_marginBottom="20dp"
+        android:hint="Away Team"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/away_logo"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginBottom="20dp"
+        android:src="@mipmap/ic_launcher"
         app:layout_constraintBottom_toTopOf="@+id/txt_away"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/score_away"
@@ -84,19 +116,51 @@
         android:text="3"
         android:textSize="80sp"
         app:layout_constraintBottom_toTopOf="@+id/away_logo"
-        app:layout_constraintTop_toBottomOf="@id/btn_add_away"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btn_add_away"
-        android:layout_width="match_parent"
+        android:id="@+id/btn_add_away_1"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="Add Away Score"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="50dp"
+        android:text="+1"
+        app:layout_constraintTop_toTopOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/score_away" />
+
+    <Button
+        android:id="@+id/btn_add_away_2"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="50dp"
+        android:text="+2"
+        app:layout_constraintTop_toTopOf="@id/guideline"
+        app:layout_constraintStart_toEndOf="@id/btn_add_home_1"
+        app:layout_constraintTop_toBottomOf="@id/score_away" />
+
+    <Button
+        android:id="@+id/btn_add_away_3"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="50dp"
+        android:text="+3"
+        app:layout_constraintTop_toTopOf="@id/guideline"
+        app:layout_constraintStart_toEndOf="@id/btn_add_home_2"
+        app:layout_constraintTop_toBottomOf="@id/score_home" />
+
+    <Button
+        android:id="@+id/btn_add_reset"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="50dp"
+        android:text="Reset"
+        app:layout_constraintTop_toTopOf="@id/guideline"
+        app:layout_constraintStart_toEndOf="@id/btn_add_home_3"
+        app:layout_constraintTop_toBottomOf="@id/score_home" />
 
     <Button
         android:id="@+id/btn_result"

@@ -51,12 +51,12 @@ public class MainActivity extends AppCompatActivity {
                 //intent
                 hometeam = homeTeamInput.getText().toString();
                 awayteam = awayTeamInput.getText().toString();
-                Intent intent = new Intent(MainActivity.this, MatchActivity.class);
-                intent.putExtra("namahome", hometeam);
-                intent.putExtra("namaaway", awayteam);
-                intent.putExtra("homeImg", homeImg.toString());
-                intent.putExtra("awayImg", awayImg.toString());
-                startActivity(intent);
+                Intent intent_1 = new Intent(MainActivity.this, MatchActivity.class);
+                intent_1.putExtra("namahome", hometeam);
+                intent_1.putExtra("namaaway", awayteam);
+                intent_1.putExtra("homeImg", homeImg.toString());
+                intent_1.putExtra("awayImg", awayImg.toString());
+                startActivity(intent_1);
             }
         });
 
